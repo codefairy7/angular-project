@@ -1,0 +1,43 @@
+<div class="container main">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h3 class="text-center">Search GitHub User</h3>
+            <br><br>
+            <form>
+                <div class="mb-3 mt-6">
+                    <input type="text" class="form-control" placeholder="Search User">
+                </div>
+                
+                <div class="d-grid gap-2">
+                <button type="button" class="btn btn-success btn-sm">Search</button>
+                </div>
+            </form>
+            </div>
+            </div>
+
+            <div class="row justify-content-center search-results">
+                <div class="col-md-6">
+                    <p>Search Results</p>
+                    <ul>
+                        <li *ngFor="let profile of profiles">
+                          <a href="{{profile.html_url}}">{{profile.login}}</a>
+                        </li>
+                      </ul>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>        
+ 

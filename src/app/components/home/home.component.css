@@ -1,0 +1,22 @@
+.main{
+    padding-top:50px;
+}
+h3 {
+    font-size: 1.15em;
+    font-weight: 500;
+    color: #4e4e4e;
+}
+button.btn.btn-success {
+    background: #38b896;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 25px;
+    font-weight: 500;
+}
+button.btn.btn-success:hover {
+    background: #35aa8b;
+   box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+}
+.search-results{
+    margin-top:2em;
+}
