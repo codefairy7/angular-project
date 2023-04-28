@@ -2,7 +2,42 @@
     <div class="row justify-content-center">
         <div class="col-md-6 text-center">
             <h3 class="text-center">Your Search History</h3>
-                <button type="button" class="btn btn-success btn-sm">Clear Search History</button>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                      <th scope="col">Search Term</th>
+                      <th scope="col">Search Results</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let searchResult of searchResults">
+                      <td>{{ searchResult?.searchTerm}}</td>
+                      <td>
+                        <div *ngIf="searchResult.searchResults.length > 0">
+                            <div *ngFor="let result of searchResult.searchResults">
+                            
+                                <a href="{{result.html_url}}" target="_blank">
+                                    <div class="card mb-3" style="max-width: 240px;">
+                                        <div class="row g-0">
+                                          <div class="col-md-4">
+                                            <img src="{{ result.avatar_url }}" class="img-fluid rounded-start" alt="...">
+                                          </div>
+                                          <div class="col-md-8">
+                                            <div class="card-body">
+                                              <h5 class="card-title">{{ result.login }}</h5>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                        </div>
+                        </div>
+                        <p *ngIf="searchResult.searchResults.length === 0">Search result not found.</p>                      
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+                <button type="button" (click)="clearSearchHistory();" class="btn btn-success btn-sm">Clear Search History</button>
         </div>        
     </div>
 </div>

@@ -13,3 +13,6 @@ button.btn.btn-success {
     padding: 5px 25px;
     font-weight: 500;
 }
+a{
+    text-decoration: none;
+}

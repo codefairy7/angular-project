@@ -20,3 +20,6 @@ button.btn.btn-success:hover {
 .search-results{
     margin-top:2em;
 }
+a{
+    text-decoration: none;
+}
