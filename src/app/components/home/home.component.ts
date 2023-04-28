@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   searchUsers() {
-    console.log(this.searchName);
     this.http.get<any[]>('https://api.github.com/search/users?q=' + this.searchName)
     .subscribe(data => {
       this.searchResults = data;
@@ -31,17 +30,6 @@ export class HomeComponent implements OnInit {
       };
 
       this.localStorageService.set(`searchResults_${Date.now()}`, JSON.stringify(searchResultsObject));
-      // const existingData = this.localStorageService.get('searchResults');
-      // console.log(existingData);
-      // //if data exists, append the new data to it
-      // if (existingData) {
-      //   existingData.push(...this.searchResults.items);
-      //   this.localStorageService.set('searchResults', JSON.stringify(existingData));
-      // } else {
-      //   this.localStorageService.set('searchResults', JSON.stringify(this.searchResults.items));
-      // }
-    
-      console.log(this.searchResults.items);
     });
   }
 
