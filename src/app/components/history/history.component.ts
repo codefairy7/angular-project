@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from 'src/app/services/local-storage-service.service';
+import { LocalStorageService } from '../../services/local-storage-service.service';
 
 @Component({
   selector: 'app-history',
@@ -13,7 +13,7 @@ export class HistoryComponent implements OnInit {
 
   }
 
-  
+
   ngOnInit() {
     const keys = Object.keys(localStorage).filter(key => key.startsWith('searchResults_'));
     for(const key of keys) {
